@@ -11,17 +11,17 @@ $(document).ready(function(){
    })
 
    $('form').on('submit', function(e){
-    e.preventeDefault();
+    e.preventDefault();
     
 
     //add imagens
     const nimage = $('#N_image').val(); 
-    const novoItem = $('<li></li>');
+    const novoItem = $('<li style="display: none"></li>');
 
     $(`<img src="${nimage}" />`).appendTo(novoItem);
     $(`
         <div class="over-lay">
-            <a herf="${nimage}" taget= "_blamk">
+            <a herf="${nimage}" taget= "_blank">
                 ver imagem tamnho real
             </a>
 
@@ -29,7 +29,7 @@ $(document).ready(function(){
     
     `).appendTo(novoItem);
     $(novoItem).appendTo('ul');
-    $(novoItem).fadeIn();
+    $(novoItem).fadeIn(2000);
     $('#N_image').val('');
    })
 
